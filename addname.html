@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ADD Patient </title>
+</head>
+<body onload="caseData()">
+    <h1>ADD New Patient</h1>
+    
+    <form id="patientForm">
+        <div id="inputs">
+            <div id="speener" class="spinner" style="display: block;"></div>
+
+            <label for="casenumb">Case Number:</label>
+            <input type="number" required readonly name="casenumb"
+                style="background-color: rgb(94, 94, 94); color: rgb(255, 255, 255);"><br>
+
+               
+
+            <label for="name">Name:</label>
+            <input type="text" required name="name"><br>
+
+            <label for="address">Address:</label>
+            <input type="text" required name="address"><br>
+
+
+            <label for="mobile">Contact:</label>
+            <input type="number" required name="mobile" pattern="0,1,2,3,4,5,6,7,8,9,"><br>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" required><br>
+            <br>
+            <label for="genderContainer">Gender:</label>
+            <br>
+            <div class="genderContainer">
+                <label class="genderLabel">
+                    <input type="radio" required name="gender" value="Male">
+                    Male
+                </label>
+                <label class="genderLabel">
+                    <input type="radio" name="gender" value="Female">
+                    Female
+                </label>
+                <label class="genderLabel">
+                    <input type="radio" name="gender" value="Other">
+                    Other
+                </label>
+            </div>
+            <br>
+
+            <div>
+                <label for="kal">प्र.वेदना/काल </label>
+                <input type="text" required name="kal"><br>
+            </div>
+
+            <div>
+                <label for="mill"> आहार:-</label>
+                <input type="text" required name="mill"><br>
+            </div>
+<br>
+            <div class="genderContainer">
+                <label class="genderLabel">
+                    <input type="checkbox" required name="लोणचे" value="लोणचे" onclick="updatePatientDatacheckbox(this)">
+                    लोणचे
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="पापड" value="पापड" onclick="updatePatientDatacheckbox(this)">
+                    पापड
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="थंड" value="थंड" onclick="updatePatientDatacheckbox(this)">
+                    थंड
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="आंबिल" value="आंबिल" onclick="updatePatientDatacheckbox(this)">
+                    आंबिल
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="फळे" value="फळे" onclick="updatePatientDatacheckbox(this)">
+                    फळे
+                </label>
+            </div>
+                <br>
+
+                <div class="genderContainer">
+                    <label class="genderLabel">
+                        <input type="checkbox" required name="चिरमुरे" value="चिरमुरे"
+                            onclick="updatePatientDatacheckbox(this)">
+                        चिरमुरे
+                    </label>
+                    <label class="genderLabel">
+                        <input type="checkbox" name="भडंग" value="भडंग" onclick="updatePatientDatacheckbox(this)">
+                        भडंग
+                    </label>
+                
+                <label class="genderLabel">
+                    <input type="checkbox" name="फरसाणा" value="फरसाणा" onclick="updatePatientDatacheckbox(this)">
+                    फरसाणा
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="पालेभाजी" value="पालेभाजी"
+                        onclick="updatePatientDatacheckbox(this)">
+                    पालेभाजी
+                </label></div>
+
+            </div>
+            <br>
+            <label for="genderContainer">अग्नी</label>
+            <div class="genderContainer">
+                <label class="genderLabel">
+                    <input type="radio" required name="अग्नी" value="सम" onclick="updatePatientDataradioButton(this)">
+                    सम
+                </label>
+                <label class="genderLabel">
+                    <input type="radio" name="अग्नी" value="विषम" onclick="updatePatientDataradioButton(this)">
+                    विषम
+                </label>
+                <label class="genderLabel">
+                    <input type="radio" name="अग्नी" value="मंद" onclick="updatePatientDataradioButton(this)">
+                    मंद
+                </label>
+            </div>
+            <br>
+
+            <div class="genderContainer">
+                <label class="genderLabel">
+                    <input type="checkbox" required name="मल" value="मल" onclick="updatePatientDatacheckbox(this)">
+                    मल
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="मूत्र" value="मूत्र" onclick="updatePatientDatacheckbox(this)">
+                    मूत्र
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="स्त्रोत्रस" value="स्त्रोत्रस"
+                        onclick="updatePatientDatacheckbox(this)">
+                    स्त्रोत्रस
+                </label>
+            
+            </div>
+            <div class="genderContainer">
+
+                <label class="genderLabel">
+                    <input type="checkbox" name="निद्रा" value="निद्रा" onclick="updatePatientDatacheckbox(this)">
+                    निद्रा
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="नाडी" value="नाडी" onclick="updatePatientDatacheckbox(this)">
+                    नाडी
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="प्रकृती" value="प्रकृती" onclick="updatePatientDatacheckbox(this)">
+                    प्रकृती
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="सत्व" value="सत्व" onclick="updatePatientDatacheckbox(this)">
+                    सत्व
+                </label>
+
+            </div>
+            <br>
+
+
+        </div>
+
+
+        <label for="patientData">Enter Patient information :</label>
+        <textarea id="patientData" required name="patientData" rows="4" cols="50"></textarea><br><br>
+        
+        <div class="button-container">
+
+        <input type="button" value="ADD Patient Data" id="add_button" onclick="openPopup()">
+    </div>
+
+
+        <div id="popup">
+            <label for="leftInput">Besic information:</label>
+            <input type="text" id="leftInput" onkeyup="showSuggestions()">
+            <div id="suggestionList"></div>
+            <label for="rightInput">Value:</label>
+            <input type="text" id="rightInput">
+            <br><br>
+
+            <input type="button" value="Add" onclick="addToTextarea()">
+
+            <input type="button" value="Cancel" onclick="closePopup()">
+        </div>
+        <br>
+        <label for="note">Note:</label>
+        <input type="text" required name="note"><br>
+
+
+        <input class="input" id="submitButton" type="button" value="Submit" onclick="validateGender()">
+    </form>
+    <script>
+
+
+function showLoader() {
+    document.getElementById('speener').style.display = 'none';
+}
+
+function hideLoader() {
+    document.getElementById('speener').style.display = 'block';
+}
+
+
+// Get the checkboxes
+function updatePatientDataradioButton(radioButton) {
+    const patientDataTextarea = document.getElementById('patientData');
+    const name = radioButton.name;
+    const value = radioButton.value;
+    const checkedValue = `${name}:-${value}`;
+
+    // Clear previous selection
+    const allRadios = document.querySelectorAll(`input[type='radio'][name='${name}']`);
+    allRadios.forEach(radio => {
+        patientDataTextarea.value = patientDataTextarea.value.replace(`${name}:-${radio.value}`, '');
+    });
+
+    // Add new selection
+    patientDataTextarea.value += checkedValue + ', ';
+}
+
+function updatePatientDatacheckbox(checkbox) {
+            const patientDataTextarea = document.getElementById('patientData');
+            const name = checkbox.name;
+            const value = checkbox.value;
+            const checkedValue = value + ':-√';
+            const uncheckedValue = value + ':-x';
+
+            if (checkbox.checked) {
+                patientDataTextarea.value += checkedValue + ', ';
+            } else {
+                // Remove the value from patientDataTextarea
+                patientDataTextarea.value = patientDataTextarea.value.replace(checkedValue, uncheckedValue);
+            }
+        }
+
+function validateGender() {
+    document.getElementById('submitButton').classList.add('hide');
+            const genderInputs = document.querySelectorAll('input[name="gender"]');
+            let isValid = false;
+            
+            genderInputs.forEach(input => {
+                if (input.checked) {
+                    isValid = true;
+                }
+            });
+            
+            if (!isValid) {
+                alert('Please select a gender.');
+                document.getElementById('submitButton').classList.remove('hide');
+            } else {
+                // Proceed with your action
+                // For example, submit the form or perform other operations
+                validateForm();
+            }
+        }
+
+function validateForm() {
+    // Prevent the default form submission
+    event.preventDefault();
+    document.getElementById('submitButton').classList.add('hide');
+
+
+    const form = document.getElementById('patientForm');
+
+    // Check each required input field
+    const requiredInputs = form.querySelectorAll('[required]');
+    let isValid = true;
+    requiredInputs.forEach(input => {
+        if (!input.value.trim()) {
+            // Add red border to empty required field
+            input.classList.add('required');
+            isValid = false;
+        } else {
+            // Remove red border if field is filled
+            input.classList.remove('required');
+        }
+    });
+
+    // If any required field is empty, stop form submission
+    if (!isValid) {
+        document.getElementById('submitButton').classList.remove('hide');
+        alert('Please fill in all required fields.');
+        return false;
+    }
+
+submitForm();
+    return true;
+}
+
+
+
+        function submitForm() {
+            var form = document.getElementById("patientForm");
+            var formData = new FormData(form);
+
+            fetch("https://script.google.com/macros/s/AKfycbwjSTcCfwTNFu19Y_gcmfoiw_Jh5fX_wkiKk3CD5SQ3-mru-mh_F5eNBr9vd7OP25qQWA/exec", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Data added successfully");
+                    form.reset(); // Reset the form after successful submission
+                    caseData();
+                    document.getElementById('submitButton').classList.remove('hide');
+                } else {
+                    throw new Error("Network response was not ok");
+                }
+            })
+            .catch(error => alert("Error: " + error.message));
+        }
+
+       
+
+
+        function openPopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+    }
+
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+
+    document.body.addEventListener("click", function(event) {
+    var leftInput = document.getElementById("leftInput");
+    var suggestionList = document.getElementById("suggestionList");
+    if (event.target !== leftInput && event.target !== suggestionList) {
+        suggestionList.style.display = "none";
+    }
+});
+
+
+var suggestions = [];
+
+// Fetch suggestions from the URL and store them in the global variable
+
+
+// Function to fetch suggestions and populate the global variable
+function fetchSuggestions() {
+    
+    fetch('https://script.google.com/macros/s/AKfycbxVO-6AzGgMs3klmYRL_LcDzIWkeMnVtCHb7GNE_1UhP9YbvsimGJWXsqOe8CrR00K0/exec')
+        .then(response => response.json())
+        .then(data => {
+            // Exclude the first row (header) and extract suggestions from the response
+            suggestions = data.content.slice(1).map(row => row[0]);
+            //console.log('All suggestions:', suggestions);
+        })
+        .catch(error => {
+            
+            console.error('Error fetching suggestions:', error);
+        });
+}
+
+// Function to show suggestions
+// Function to show suggestions
+function showSuggestions() {
+    var leftInput = document.getElementById("leftInput");
+    var suggestionList = document.getElementById("suggestionList");
+
+    // Hide suggestion list initially
+    suggestionList.style.display = "none";
+
+    // Get the input value
+    var input = leftInput.value.toLowerCase();
+   // console.log('Input:', input);
+
+    // Filter suggestions based on the input
+    var matchingSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(input));
+    //console.log('Matching suggestions:', matchingSuggestions); // Log matching suggestions for debugging
+
+    if (matchingSuggestions.length > 0) {
+        // Clear previous suggestions
+        suggestionList.innerHTML = "";
+
+        // Populate suggestion list
+        matchingSuggestions.forEach(function(suggestion) {
+            var suggestionItem = document.createElement("div");
+            suggestionItem.textContent = suggestion;
+            suggestionItem.classList.add("suggestionItem");
+            suggestionItem.onclick = function() {
+                leftInput.value = suggestion;
+                suggestionList.style.display = "none";
+            };
+            suggestionList.appendChild(suggestionItem);
+            
+        });
+
+        // Show suggestion list
+        suggestionList.style.display = "block";
+       
+    }
+}
+
+
+
+
+
+function addToTextarea() {
+    var leftInput = document.getElementById("leftInput").value;
+    var rightInput = document.getElementById("rightInput").value;
+    var textarea = document.getElementById("patientData");
+
+    // Check if the right input is empty
+    if (!rightInput.trim()) {
+        alert("Please fill in the value for the right input.");
+        return; // Exit the function if right input is empty
+    }
+
+    var currentText = textarea.value.trim();
+    if (currentText !== "") {
+        currentText += ", ";
+    }
+    currentText += leftInput + " :- " + rightInput;
+    textarea.value = currentText;
+
+    // Clear input values
+    document.getElementById("leftInput").value = "";
+    document.getElementById("rightInput").value = "";
+
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+}
+
+
+function caseData() {
+    document.getElementById('speener').style.display = 'block';
+    
+    fetch('https://script.google.com/macros/s/AKfycbwjSTcCfwTNFu19Y_gcmfoiw_Jh5fX_wkiKk3CD5SQ3-mru-mh_F5eNBr9vd7OP25qQWA/exec')
+    .then(response => response.json())
+    .then(data => {
+        // Extract the data from the response
+        const columnBData = data.content.map(row => row[1]); // Assuming B column is index 1
+
+       // console.log('Column B Data:', columnBData); // Log the column B data to see if it's correct
+
+        // Filter out non-numeric values and convert to numbers
+        const numericData = columnBData.filter(value => !isNaN(value)).map(Number);
+
+       // console.log('Numeric Data:', numericData); // Log the numeric data
+
+        // Find the highest number in the numeric data
+        const highestNumber = Math.max(...numericData);
+
+       // console.log('Highest Number:', highestNumber); // Log the highest number to see if it's correct
+
+        // Add 1 to the highest number to get the new case number
+        const newCaseNumber = highestNumber + 1;
+
+        //console.log('New Case Number:', newCaseNumber); // Log the new case number
+
+        // Set the new case number value in the input field
+        document.getElementsByName("casenumb")[0].value = newCaseNumber;
+        fetchSuggestions();
+        
+        document.getElementById('speener').style.display = 'none';
+    })
+    .catch(error => console.error('Error:', error));
+    
+}
+
+var key = localStorage.getItem("name");
+
+if (key == "secrate") {
+}
+else {
+  window.location.href = "index.html";
+}
+
+// Check if session has timed out
+    if(localStorage.getItem('name') === 'logout') {
+      // Perform logout actions here, such as redirecting to login page
+      window.location.href = 'index.html';
+    } else {
+      // Set session timeout timer to check for session timeout
+      var sessionTimeout = setTimeout(function() {
+        // Set local storage item to "logout"
+        localStorage.setItem('name', 'logout');
+        // Perform logout actions here, such as redirecting to login page
+        window.location.href = 'index.html';
+      }, 1800000); // Set timeout period to 30 minutes (in milliseconds)
+    
+      // Reset session timeout on user activity
+      window.addEventListener('mousemove', function() {
+        clearTimeout(sessionTimeout);
+        sessionTimeout = setTimeout(function() {
+          // Set local storage item to "logout"
+          localStorage.setItem('name', 'logout');
+          // Perform logout actions here, such as redirecting to login page
+          window.location.href = 'index.html';
+        }, 1800000); // Set timeout period to 30 minutes (in milliseconds)
+      });
+    }
+
+       
+
+    </script>
+</body>
+</html>

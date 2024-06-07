@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>ADD Patient </title>
+</head>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('body_back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #fc9015;
+}
+
+form {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(248, 246, 220, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0);
+}
+
+.spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+</style>
+<body onload="fetchData()">
+    <h1>ADD New Patient</h1>
+    <form id="patientForm">
+        <div id="spinner" class="spinner"></div>
+        <div id="inputs"></div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+<script>
+
+function fetchData() {
+    // Show spinner
+    document.getElementById('spinner').style.display = 'block';
+
+    fetch('https://script.google.com/macros/s/AKfycbwjSTcCfwTNFu19Y_gcmfoiw_Jh5fX_wkiKk3CD5SQ3-mru-mh_F5eNBr9vd7OP25qQWA/exec')
+        .then(response => response.json())
+        .then(data => {
+            // Hide spinner
+            document.getElementById('spinner').style.display = 'none';
+
+            // Get the form inputs container
+            const inputsContainer = document.getElementById('inputs');
+
+            // Clear previous data
+            inputsContainer.innerHTML = '';
+
+            // Iterate over the data and create HTML for each entry
+            data.forEach(entry => {
+                const html = `
+                    <label for="casenumb">Case Number:</label>
+                    <input type="text" id="casenumb" required name="casenumb" value="${entry.caseNumber}" placeholder="Enter Case Number">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required name="name" value="${entry.name}" placeholder="Enter Name">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required name="address" value="${entry.address}" placeholder="Enter Address">
+                    <label for="mobile">Contact:</label>
+                    <input type="text" id="mobile" required name="mobile" value="${entry.contact}" placeholder="Enter Contact">
+                    <label for="age">Age:</label>
+                    <input type="text" id="age" required name="age" value="${entry.age}" placeholder="Enter Age">
+                    <label for="gender">Gender:</label>
+                    <input type="text" id="gender" required name="gender" value="${entry.gender}" placeholder="Enter Gender">
+                    <label for="kal">प्र.वेदना/काल:</label>
+                    <input type="text" id="kal" required name="kal" value="${entry.painOrTime}" placeholder="Enter प्र.वेदना/काल">
+                    <label for="ahar">आहार:</label>
+                    <input type="text" id="ahar" required name="ahar" value="${entry.diet}" placeholder="Enter आहार">
+                    <label for="patientData">Patient Data:</label>
+                    <textarea id="patientData" required name="patientData" rows="4" cols="50">${entry.patientData}</textarea>
+                `;
+
+                // Append the HTML to the inputs container
+                inputsContainer.insertAdjacentHTML('beforeend', html);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            // Hide spinner
+            document.getElementById('spinner').style.display = 'none';
+            // Display error message or handle error as needed
+        });
+}
+
+</script>
+</html>
