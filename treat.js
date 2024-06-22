@@ -375,34 +375,21 @@ document.addEventListener('click', function (event) {
 });
 
 
-let caseData = [];
-
+var caseData = [];
 
 function fetchInfo() {
-  
     showLoader();
-
-  fetch('https://script.google.com/macros/s/AKfycbwjSTcCfwTNFu19Y_gcmfoiw_Jh5fX_wkiKk3CD5SQ3-mru-mh_F5eNBr9vd7OP25qQWA/exec')
-    .then(res => res.json())
-    .then(data => {
-
-      
-      const infodata = data?.content;
-     
-     
-      if (infodata && infodata.length > 0) {
-          
-        caseData = infodata;
-        getSitedetails();
-        hideLoader();
-        //console.log(caseData);
-      }
-
-
-    });
-
+    fetch('https://script.google.com/macros/s/AKfycbwjSTcCfwTNFu19Y_gcmfoiw_Jh5fX_wkiKk3CD5SQ3-mru-mh_F5eNBr9vd7OP25qQWA/exec')
+        .then(res => res.json())
+        .then(data => {
+            const infodata = data?.content;
+            if (infodata && infodata.length > 0) {
+                caseData = infodata;
+                getSitedetails();
+            }
+            hideLoader();
+        });
 }
-
 
 function getSitedetails() {
     var casenumb = document.getElementById("casenumb").value;
@@ -418,10 +405,9 @@ function getSitedetails() {
     }
 
     const selectedsite = caseData[dataIndex];
-    console.log(dataIndex);
     if (selectedsite && selectedsite.length > 0) {
         const popupHTML = `
-            <div id="popupContainer2" class="popup">
+            <div>
                 <h2>Case Details</h2>
                 <p>Case Number: ${selectedsite[1]}</p>
                 <p>Name: ${selectedsite[2]}</p>
@@ -429,10 +415,8 @@ function getSitedetails() {
                 <p>Contact: ${selectedsite[4]}</p>
                 <p>Age: ${selectedsite[5]}</p>
                 <p>Gender: ${selectedsite[6]}</p>
-                <p>प्र.वेदना/काल: ${selectedsite[7]}</p>
-                <p>आहार: ${selectedsite[8]}</p>
-                <p>Patient Data: ${selectedsite[9]}</p>
-                <button onclick="closedPopup()">Close</button>
+                <p>Patient Data: ${selectedsite[7]}</p>
+                <div id="closePopupButton" class="close-btn" onclick="closedPopup()">Close</div>
             </div>
         `;
         document.getElementById('popupContainer2').innerHTML = popupHTML;
@@ -446,6 +430,8 @@ function showInfoPopup() {
 }
 
 function closedPopup() {
+
+    document.getElementById('popupContainer2').innerHTML = '';
     document.getElementById('popupContainer2').style.display = 'none';
 }
 
