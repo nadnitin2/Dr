@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>ADD Patient </title>
 </head>
+
 <body onload="caseData()">
     <h1>ADD New Patient</h1>
-    
+
     <form id="patientForm">
         <div id="inputs">
             <div id="speener" class="spinner" style="display: block;"></div>
 
             <label for="casenumb">Case Number:</label>
-            <input type="number" required  name="casenumb"
-                ><br>
+            <input type="number" required name="casenumb"><br>
 
-               
+
 
             <label for="name">Name:</label>
             <input type="text" required name="name"><br>
@@ -50,130 +51,191 @@
             </div>
             <br>
 
-            <div>
-                <label for="kal">प्र.वेदना/काल </label>
-                <input type="text" required name="kal"><br>
-            </div>
 
-            <div>
-                <label for="mill"> आहार:-</label>
-                <input type="text" required name="mill"><br>
-            </div>
-<br>
-            <div class="genderContainer">
-                <label class="genderLabel">
-                    <input type="checkbox" required name="लोणचे" value="लोणचे" onclick="updatePatientDatacheckbox(this)">
-                    लोणचे
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="पापड" value="पापड" onclick="updatePatientDatacheckbox(this)">
-                    पापड
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="थंड" value="थंड" onclick="updatePatientDatacheckbox(this)">
-                    थंड
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="आंबिल" value="आंबिल" onclick="updatePatientDatacheckbox(this)">
-                    आंबिल
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="फळे" value="फळे" onclick="updatePatientDatacheckbox(this)">
-                    फळे
-                </label>
-            </div>
-                <br>
 
-                <div class="genderContainer">
-                    <label class="genderLabel">
-                        <input type="checkbox" required name="चिरमुरे" value="चिरमुरे"
-                            onclick="updatePatientDatacheckbox(this)">
-                        चिरमुरे
-                    </label>
-                    <label class="genderLabel">
-                        <input type="checkbox" name="भडंग" value="भडंग" onclick="updatePatientDatacheckbox(this)">
-                        भडंग
-                    </label>
-                
-                <label class="genderLabel">
-                    <input type="checkbox" name="फरसाणा" value="फरसाणा" onclick="updatePatientDatacheckbox(this)">
-                    फरसाणा
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="पालेभाजी" value="पालेभाजी"
-                        onclick="updatePatientDatacheckbox(this)">
-                    पालेभाजी
-                </label></div>
+            <div class="smallinput">
+                <label for="सकाळी"> सकाळी</label>
+                <input type="text" required name="सकाळी" id="1"><br>
 
-            </div>
-            <br>
-            <label for="genderContainer">अग्नी</label>
-            <div class="genderContainer">
-                <label class="genderLabel">
-                    <input type="radio" required name="अग्नी" value="सम" onclick="updatePatientDataradioButton(this)">
-                    सम
-                </label>
-                <label class="genderLabel">
-                    <input type="radio" name="अग्नी" value="विषम" onclick="updatePatientDataradioButton(this)">
-                    विषम
-                </label>
-                <label class="genderLabel">
-                    <input type="radio" name="अग्नी" value="मंद" onclick="updatePatientDataradioButton(this)">
-                    मंद
-                </label>
-            </div>
-            <br>
-
-            <div class="genderContainer">
-                <label class="genderLabel">
-                    <input type="checkbox" required name="मल" value="मल" onclick="updatePatientDatacheckbox(this)">
-                    मल
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="मूत्र" value="मूत्र" onclick="updatePatientDatacheckbox(this)">
-                    मूत्र
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="स्त्रोत्रस" value="स्त्रोत्रस"
-                        onclick="updatePatientDatacheckbox(this)">
-                    स्त्रोत्रस
-                </label>
-            
-            </div>
-            <div class="genderContainer">
-
-                <label class="genderLabel">
-                    <input type="checkbox" name="निद्रा" value="निद्रा" onclick="updatePatientDatacheckbox(this)">
-                    निद्रा
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="नाडी" value="नाडी" onclick="updatePatientDatacheckbox(this)">
-                    नाडी
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="प्रकृती" value="प्रकृती" onclick="updatePatientDatacheckbox(this)">
-                    प्रकृती
-                </label>
-                <label class="genderLabel">
-                    <input type="checkbox" name="सत्व" value="सत्व" onclick="updatePatientDatacheckbox(this)">
-                    सत्व
+                <label for="पाणी">पाणी </label>
+                <input type="text" name="पाणी" id="2" value="" onkeyup="updatePatientDataText()">
                 </label>
 
+
+                <label for="दही">दही</label>
+                <input type="text" name="दही" id="3" value="" onkeyup="updatePatientDataText()">
+                </label>
+                <label for="ताक">ताक </label>
+                <input type="text" name="ताक" id="4" value="" onkeyup="updatePatientDataText()">
+                </label>
             </div>
-            <br>
+            <div class="smallinput">
+                <label for="दूध">दूध</label>
+                <input type="text" name="दूध" id="5" value="" onkeyup="updatePatientDataText()">
+                </label>
+
+                <label for="अंबिल">अंबिल</label>
+                <input type="text" name="अंबिल" id="6" value="" onkeyup="updatePatientDataText()">
+
+                <label for="फळे">फळे</label>
+                <input type="text" name="फळे" id="7" value="" onkeyup="updatePatientDataText()">
+
+                <label for="मल">मल</label>
+                <input type="text" name="मल" id="8" value="" onkeyup="updatePatientDataText()">
+
+                </label>
+            </div>
+
+            <div class="smallinput">
+                <label for="निद्रा">निद्रा</label>
+                <input type="text" name="निद्रा" id="9" value="" onkeyup="updatePatientDataText()">
+                </label>
+
+                <label for="जिव्हा">जिव्हा</label>
+                <input type="text" name="जिव्हा" id="10" value="" onkeyup="updatePatientDataText()">
+
+                <label for="नाडी">नाडी</label>
+                <input type="text" name="नाडी" id="11" value="" onkeyup="updatePatientDataText()">
+
+
+                </label>
+            </div>
 
 
         </div>
 
+        <div class="border">
 
+            <div class="genderContainer">
+                <label for="genderContainer">आहार</label>
+                <label class="genderLabel">
+                    <input type="checkbox" class="checkbox" required name="शीग्र" value="शीग्र"
+                        onclick="updatePatientDatacahar(this)">
+                    शीग्र
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="सावकाश" class="checkbox" value="सावकाश"
+                        onclick="updatePatientDatacahar(this)">
+                    सावकाश
+                </label>
+            </div>
+        </div>
+
+
+        <br>
+
+
+
+        </div>
+        <br>
+        <div class="border">
+            <label for="genderContainer">अग्नी</label>
+            <div class="genderContainer">
+                <label class="genderLabel">
+                    <input type="checkbox" name="सम" value="सम" onclick="updatePatientDataagni(this)">
+                    सम
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="विषम" value="विषम" onclick="updatePatientDataagni(this)">
+                    विषम
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="मंद" value="मंद" onclick="updatePatientDataagni(this)">
+                    मंद
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="तीक्ष्ण" value="तीक्ष्ण" onclick="updatePatientDataagni(this)">
+                    तीक्ष्ण
+                </label>
+            </div>
+        </div>
+        <br>
+        <div class="border">
+            <label for="genderContainer">प्रकृती</label>
+            <div class="genderContainer">
+                <label class="genderLabel">
+                    <input type="checkbox" name="वात" value="वात" onclick="updatePatientDataprakruti(this)">
+                    वात
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="पित्त" value="पित्त" onclick="updatePatientDataprakruti(this)">
+                    पित्त
+                </label>
+                <label class="genderLabel">
+                    <input type="checkbox" name="कफ" value="कफ" onclick="updatePatientDataprakruti(this)">
+                    कफ
+                </label>
+
+            </div>
+        </div>
+        <br>
+
+        <div class="genderContainer">
+            <label class="genderLabel">
+                <input type="checkbox" name="मो.धान्य" value="मो.धान्य" onclick="updatePatientDatacheckbox(this)">
+                मो.धान्य
+            </label>
+
+
+            <label class="genderLabel">
+                <input type="checkbox" name="मा.आहार" value="मा.आहार" onclick="updatePatientDatacheckbox(this)">
+                मा.आहार
+            </label>
+
+            <label class="genderLabel">
+                <input type="checkbox" name="सत्व" value="सत्व" onclick="updatePatientDatacheckbox(this)">
+                सत्व
+            </label>
+
+            <label class="genderLabel">
+                <input type="checkbox" required name="लोणचे" value="लोणचे" onclick="updatePatientDatacheckbox(this)">
+                लोणचे
+            </label>
+
+        </div>
+        <div class="genderContainer">
+
+            <label class="genderLabel">
+                <input type="checkbox" name="पापड" value="पापड" onclick="updatePatientDatacheckbox(this)">
+                पापड
+            </label>
+            <label class="genderLabel">
+                <input type="checkbox" name="थंड" value="थंड" onclick="updatePatientDatacheckbox(this)">
+                थंड
+            </label>
+            <label class="genderLabel">
+                <input type="checkbox" required name="चिरमुरे" value="चिरमुरे"
+                    onclick="updatePatientDatacheckbox(this)">
+                चिरमुरे
+            </label>
+
+            <label class="genderLabel">
+                <input type="checkbox" name="भडंग" value="भडंग" onclick="updatePatientDatacheckbox(this)">
+                भडंग
+            </label>
+
+        </div>
+
+        <div class="genderContainer">
+
+
+
+            <label class="genderLabel">
+                <input type="checkbox" name="फरसाणा" value="फरसाणा" onclick="updatePatientDatacheckbox(this)">
+                फरसाणा
+            </label>
+            <label class="genderLabel">
+                <input type="checkbox" name="पालेभाजी" value="पालेभाजी" onclick="updatePatientDatacheckbox(this)">
+                पालेभाजी
+            </label>
+        </div>
+        <br>
+        </div>
         <label for="patientData">Enter Patient information :</label>
-        <textarea id="patientData" required name="patientData" rows="4" cols="50"></textarea><br><br>
-        
-        <div class="button-container">
-
-        <input type="button" value="ADD Patient Data" id="add_button" onclick="openPopup()">
-    </div>
-
+        <textarea id="patientData" required name="patientData" rows="10" cols="55"></textarea><br><br>
+         <div class="button-container">
+            <input type="button" value="ADD Patient Data" id="add_button" onclick="openPopup()">
+        </div>
 
         <div id="popup">
             <label for="leftInput">Besic information:</label>
@@ -182,48 +244,175 @@
             <label for="rightInput">Value:</label>
             <input type="text" id="rightInput">
             <br><br>
-
             <input type="button" value="Add" onclick="addToTextarea()">
-
             <input type="button" value="Cancel" onclick="closePopup()">
         </div>
         <br>
         <label for="note">Note:</label>
         <input type="text" required name="note"><br>
-
-
         <input class="input" id="submitButton" type="button" value="Submit" onclick="validateGender()">
     </form>
     <script>
 
+        function updatePatientDatacahar(checkbox) {
+            const patientDataTextarea = document.getElementById('patientData');
+            const label = "आहार"; // Fixed label text
+            const value = checkbox.value;
+            const checkedValue = `${label} = ${value}:-√`;
 
-function showLoader() {
-    document.getElementById('speener').style.display = 'none';
-}
+            // Check if any checkbox is already checked
+            const existingValueRegex = new RegExp(`${label} = [^:-]+:-√`);
+            const currentValue = patientDataTextarea.value.trim();
 
-function hideLoader() {
-    document.getElementById('speener').style.display = 'block';
-}
+            // If the current value already contains a checked checkbox value, replace it
+            if (existingValueRegex.test(currentValue)) {
+                patientDataTextarea.value = currentValue.replace(existingValueRegex, checkedValue);
+            } else {
+                // Otherwise, append the new checked value
+                patientDataTextarea.value += '(' + checkedValue + ')' + ', ';
+            }
+
+            // Uncheck other checkboxes except the current one
+            const checkboxes = document.querySelectorAll('.genderContainer input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb !== checkbox) {
+                    cb.checked = false;
+                }
+            });
+        }
+
+        function updatePatientDataagni(checkbox) {
+            const patientDataTextarea = document.getElementById('patientData');
+            const label = "अग्नि"; // Fixed label text
+            const value = checkbox.value;
+            const checkedValue = `${label} = ${value}:-√`;
+
+            // Check if any checkbox is already checked
+            const existingValueRegex = new RegExp(`${label} = [^:-]+:-√`);
+            const currentValue = patientDataTextarea.value.trim();
+
+            // If the current value already contains a checked checkbox value, replace it
+            if (existingValueRegex.test(currentValue)) {
+                patientDataTextarea.value = currentValue.replace(existingValueRegex, checkedValue);
+            } else {
+                // Otherwise, append the new checked value
+                patientDataTextarea.value += '(' + checkedValue + ')' + ', ';
+            }
+
+            // Uncheck other checkboxes except the current one
+            const checkboxes = document.querySelectorAll('.genderContainer input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb !== checkbox) {
+                    cb.checked = false;
+                }
+            });
+        }
 
 
-// Get the checkboxes
-function updatePatientDataradioButton(radioButton) {
-    const patientDataTextarea = document.getElementById('patientData');
-    const name = radioButton.name;
-    const value = radioButton.value;
-    const checkedValue = `${name}:-${value}`;
 
-    // Clear previous selection
-    const allRadios = document.querySelectorAll(`input[type='radio'][name='${name}']`);
-    allRadios.forEach(radio => {
-        patientDataTextarea.value = patientDataTextarea.value.replace(`${name}:-${radio.value}`, '');
-    });
 
-    // Add new selection
-    patientDataTextarea.value += checkedValue + ', ';
-}
+        function updatePatientDataprakruti(checkbox) {
+            const patientDataTextarea = document.getElementById('patientData');
+            const label = "प्रकृती"; // Fixed label text
+            const value = checkbox.value;
+            const checkedValue = `${label} = ${value}:-√`;
 
-function updatePatientDatacheckbox(checkbox) {
+            // Check if any checkbox is already checked
+            const existingValueRegex = new RegExp(`${label} = [^:-]+:-√`);
+            const currentValue = patientDataTextarea.value.trim();
+
+            // If the current value already contains a checked checkbox value, replace it
+            if (existingValueRegex.test(currentValue)) {
+                patientDataTextarea.value = currentValue.replace(existingValueRegex, checkedValue);
+            } else {
+                // Otherwise, append the new checked value
+                patientDataTextarea.value += '(' + checkedValue + ')' + ', ';
+            }
+
+            // Uncheck other checkboxes except the current one
+            const checkboxes = document.querySelectorAll('.genderContainer input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (cb !== checkbox) {
+                    cb.checked = false;
+                }
+            });
+        }
+
+
+
+        function updatePatientDataText() {
+            const patientDataTextarea = document.getElementById('patientData');
+            patientDataTextarea.value = ''; // Clear previous data
+
+            // Retrieve each input element by ID
+            const सकाळीValue = document.getElementById('1').value.trim();
+            const waterValue = document.getElementById('2').value.trim();
+            const दहीValue = document.getElementById('3').value.trim();
+            const ताकValue = document.getElementById('4').value.trim();
+            const दूधValue = document.getElementById('5').value.trim();
+            const आंबिलValue = document.getElementById('6').value.trim();
+            const फळेValue = document.getElementById('7').value.trim();
+            const मलValue = document.getElementById('8').value.trim();
+            const निद्राValue = document.getElementById('9').value.trim();
+            const जिव्हाValue = document.getElementById('10').value.trim();
+            const नाडीValue = document.getElementById('11').value.trim();
+
+            // Construct text values
+            const सकाळीText = `सकाळी :- ${सकाळीValue}, `;
+            const waterText = `पाणी :- ${waterValue}, `;
+            const दहीText = `दही :- ${दहीValue}, `;
+            const ताकText = `ताक :- ${ताकValue}, `;
+            const दूधText = `दूध :- ${दूधValue}, `;
+            const आंबिलText = `आंबिल :- ${आंबिलValue}, `;
+            const फळेText = `फळे :- ${फळेValue}, `;
+            const मलText = `मल :- ${मलValue}, `;
+            const निद्राText = `निद्रा :- ${निद्राValue}, `;
+            const जिव्हाText = `जिव्हा :- ${जिव्हाValue}, `;
+            const नाडीText = `नाडी :- ${नाडीValue}, `;
+
+            // Concatenate text values
+            patientDataTextarea.value = सकाळीText + waterText + दहीText + ताकText + दूधText + आंबिलText + फळेText + मलText + निद्राText + जिव्हाText + नाडीText;
+
+            // Remove trailing comma and space if present
+            if (patientDataTextarea.value.endsWith(', ')) {
+                patientDataTextarea.value = patientDataTextarea.value.slice(0, -2);
+            }
+        }
+
+
+
+        function showLoader() {
+            document.getElementById('speener').style.display = 'none';
+        }
+
+        function hideLoader() {
+            document.getElementById('speener').style.display = 'block';
+        }
+
+
+        // Get the checkboxes
+        function updatePatientDataradioButton(radioButton) {
+            const patientDataTextarea = document.getElementById('patientData');
+            const name = radioButton.name;
+            const value = radioButton.value;
+            const checkedValue = `${name}:-${value}`;
+
+            // Clear previous selection
+            const allRadios = document.querySelectorAll(`input[type='radio'][name='${name}']`);
+            allRadios.forEach(radio => {
+                patientDataTextarea.value = patientDataTextarea.value.replace(`${name}:-${radio.value}`, '');
+            });
+
+            // Add new selection
+            patientDataTextarea.value += checkedValue + ', ';
+        }
+
+
+
+
+
+
+        function updatePatientDatacheckbox(checkbox) {
             const patientDataTextarea = document.getElementById('patientData');
             const name = checkbox.name;
             const value = checkbox.value;
@@ -238,17 +427,19 @@ function updatePatientDatacheckbox(checkbox) {
             }
         }
 
-function validateGender() {
-    document.getElementById('submitButton').classList.add('hide');
+
+
+        function validateGender() {
+            document.getElementById('submitButton').classList.add('hide');
             const genderInputs = document.querySelectorAll('input[name="gender"]');
             let isValid = false;
-            
+
             genderInputs.forEach(input => {
                 if (input.checked) {
                     isValid = true;
                 }
             });
-            
+
             if (!isValid) {
                 alert('Please select a gender.');
                 document.getElementById('submitButton').classList.remove('hide');
@@ -259,38 +450,38 @@ function validateGender() {
             }
         }
 
-function validateForm() {
-    // Prevent the default form submission
-    event.preventDefault();
-    document.getElementById('submitButton').classList.add('hide');
+        function validateForm() {
+            // Prevent the default form submission
+            event.preventDefault();
+            document.getElementById('submitButton').classList.add('hide');
 
 
-    const form = document.getElementById('patientForm');
+            const form = document.getElementById('patientForm');
 
-    // Check each required input field
-    const requiredInputs = form.querySelectorAll('[required]');
-    let isValid = true;
-    requiredInputs.forEach(input => {
-        if (!input.value.trim()) {
-            // Add red border to empty required field
-            input.classList.add('required');
-            isValid = false;
-        } else {
-            // Remove red border if field is filled
-            input.classList.remove('required');
+            // Check each required input field
+            const requiredInputs = form.querySelectorAll('[required]');
+            let isValid = true;
+            requiredInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    // Add red border to empty required field
+                    input.classList.add('required');
+                    isValid = false;
+                } else {
+                    // Remove red border if field is filled
+                    input.classList.remove('required');
+                }
+            });
+
+            // If any required field is empty, stop form submission
+            if (!isValid) {
+                document.getElementById('submitButton').classList.remove('hide');
+                alert('Please fill in all required fields.');
+                return false;
+            }
+
+            submitForm();
+            return true;
         }
-    });
-
-    // If any required field is empty, stop form submission
-    if (!isValid) {
-        document.getElementById('submitButton').classList.remove('hide');
-        alert('Please fill in all required fields.');
-        return false;
-    }
-
-submitForm();
-    return true;
-}
 
 
 
@@ -302,204 +493,205 @@ submitForm();
                 method: "POST",
                 body: formData
             })
-            .then(response => {
-                if (response.ok) {
-                    alert("Data added successfully");
-                    form.reset(); // Reset the form after successful submission
-                    caseData();
-                    document.getElementById('submitButton').classList.remove('hide');
-                } else {
-                    throw new Error("Network response was not ok");
-                }
-            })
-            .catch(error => alert("Error: " + error.message));
+                .then(response => {
+                    if (response.ok) {
+                        alert("Data added successfully");
+                        form.reset(); // Reset the form after successful submission
+                        caseData();
+                        document.getElementById('submitButton').classList.remove('hide');
+                    } else {
+                        throw new Error("Network response was not ok");
+                    }
+                })
+                .catch(error => alert("Error: " + error.message));
         }
 
-       
+
 
 
         function openPopup() {
-        var popup = document.getElementById("popup");
-        popup.style.display = "block";
-    }
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
 
-    function closePopup() {
-        var popup = document.getElementById("popup");
-        popup.style.display = "none";
-    }
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
 
-    document.body.addEventListener("click", function(event) {
-    var leftInput = document.getElementById("leftInput");
-    var suggestionList = document.getElementById("suggestionList");
-    if (event.target !== leftInput && event.target !== suggestionList) {
-        suggestionList.style.display = "none";
-    }
-});
-
-
-var suggestions = [];
-
-// Fetch suggestions from the URL and store them in the global variable
-
-
-// Function to fetch suggestions and populate the global variable
-function fetchSuggestions() {
-    
-    fetch('https://script.google.com/macros/s/AKfycbxVO-6AzGgMs3klmYRL_LcDzIWkeMnVtCHb7GNE_1UhP9YbvsimGJWXsqOe8CrR00K0/exec')
-        .then(response => response.json())
-        .then(data => {
-            // Exclude the first row (header) and extract suggestions from the response
-            suggestions = data.content.slice(1).map(row => row[0]);
-            //console.log('All suggestions:', suggestions);
-        })
-        .catch(error => {
-            
-            console.error('Error fetching suggestions:', error);
-        });
-}
-
-// Function to show suggestions
-// Function to show suggestions
-function showSuggestions() {
-    var leftInput = document.getElementById("leftInput");
-    var suggestionList = document.getElementById("suggestionList");
-
-    // Hide suggestion list initially
-    suggestionList.style.display = "none";
-
-    // Get the input value
-    var input = leftInput.value.toLowerCase();
-   // console.log('Input:', input);
-
-    // Filter suggestions based on the input
-    var matchingSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(input));
-    //console.log('Matching suggestions:', matchingSuggestions); // Log matching suggestions for debugging
-
-    if (matchingSuggestions.length > 0) {
-        // Clear previous suggestions
-        suggestionList.innerHTML = "";
-
-        // Populate suggestion list
-        matchingSuggestions.forEach(function(suggestion) {
-            var suggestionItem = document.createElement("div");
-            suggestionItem.textContent = suggestion;
-            suggestionItem.classList.add("suggestionItem");
-            suggestionItem.onclick = function() {
-                leftInput.value = suggestion;
+        document.body.addEventListener("click", function (event) {
+            var leftInput = document.getElementById("leftInput");
+            var suggestionList = document.getElementById("suggestionList");
+            if (event.target !== leftInput && event.target !== suggestionList) {
                 suggestionList.style.display = "none";
-            };
-            suggestionList.appendChild(suggestionItem);
-            
+            }
         });
 
-        // Show suggestion list
-        suggestionList.style.display = "block";
-       
-    }
-}
+
+        var suggestions = [];
+
+        // Fetch suggestions from the URL and store them in the global variable
+
+
+        // Function to fetch suggestions and populate the global variable
+        function fetchSuggestions() {
+
+            fetch('https://script.google.com/macros/s/AKfycbxVO-6AzGgMs3klmYRL_LcDzIWkeMnVtCHb7GNE_1UhP9YbvsimGJWXsqOe8CrR00K0/exec')
+                .then(response => response.json())
+                .then(data => {
+                    // Exclude the first row (header) and extract suggestions from the response
+                    suggestions = data.content.slice(1).map(row => row[0]);
+                    //console.log('All suggestions:', suggestions);
+                })
+                .catch(error => {
+
+                    console.error('Error fetching suggestions:', error);
+                });
+        }
+
+        // Function to show suggestions
+        // Function to show suggestions
+        function showSuggestions() {
+            var leftInput = document.getElementById("leftInput");
+            var suggestionList = document.getElementById("suggestionList");
+
+            // Hide suggestion list initially
+            suggestionList.style.display = "none";
+
+            // Get the input value
+            var input = leftInput.value.toLowerCase();
+            // console.log('Input:', input);
+
+            // Filter suggestions based on the input
+            var matchingSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(input));
+            //console.log('Matching suggestions:', matchingSuggestions); // Log matching suggestions for debugging
+
+            if (matchingSuggestions.length > 0) {
+                // Clear previous suggestions
+                suggestionList.innerHTML = "";
+
+                // Populate suggestion list
+                matchingSuggestions.forEach(function (suggestion) {
+                    var suggestionItem = document.createElement("div");
+                    suggestionItem.textContent = suggestion;
+                    suggestionItem.classList.add("suggestionItem");
+                    suggestionItem.onclick = function () {
+                        leftInput.value = suggestion;
+                        suggestionList.style.display = "none";
+                    };
+                    suggestionList.appendChild(suggestionItem);
+
+                });
+
+                // Show suggestion list
+                suggestionList.style.display = "block";
+
+            }
+        }
 
 
 
 
 
-function addToTextarea() {
-    var leftInput = document.getElementById("leftInput").value;
-    var rightInput = document.getElementById("rightInput").value;
-    var textarea = document.getElementById("patientData");
+        function addToTextarea() {
+            var leftInput = document.getElementById("leftInput").value;
+            var rightInput = document.getElementById("rightInput").value;
+            var textarea = document.getElementById("patientData");
 
-    // Check if the right input is empty
-    if (!rightInput.trim()) {
-        alert("Please fill in the value for the right input.");
-        return; // Exit the function if right input is empty
-    }
+            // Check if the right input is empty
+            if (!rightInput.trim()) {
+                alert("Please fill in the value for the right input.");
+                return; // Exit the function if right input is empty
+            }
 
-    var currentText = textarea.value.trim();
-    if (currentText !== "") {
-        currentText += ", ";
-    }
-    currentText += leftInput + " :- " + rightInput;
-    textarea.value = currentText;
+            var currentText = textarea.value.trim();
+            if (currentText !== "") {
+                currentText += ", ";
+            }
+            currentText += leftInput + " :- " + rightInput;
+            textarea.value = currentText;
 
-    // Clear input values
-    document.getElementById("leftInput").value = "";
-    document.getElementById("rightInput").value = "";
+            // Clear input values
+            document.getElementById("leftInput").value = "";
+            document.getElementById("rightInput").value = "";
 
-    var popup = document.getElementById("popup");
-    popup.style.display = "none";
-}
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
 
 
-function caseData() {
-    document.getElementById('speener').style.display = 'block';
-    
-    fetch('https://script.google.com/macros/s/AKfycbwjSTcCfwTNFu19Y_gcmfoiw_Jh5fX_wkiKk3CD5SQ3-mru-mh_F5eNBr9vd7OP25qQWA/exec')
-    .then(response => response.json())
-    .then(data => {
-        // Extract the data from the response
-        const columnBData = data.content.map(row => row[1]); // Assuming B column is index 1
+        function caseData() {
+            document.getElementById('speener').style.display = 'block';
 
-       // console.log('Column B Data:', columnBData); // Log the column B data to see if it's correct
+            fetch('https://script.google.com/macros/s/AKfycbwjSTcCfwTNFu19Y_gcmfoiw_Jh5fX_wkiKk3CD5SQ3-mru-mh_F5eNBr9vd7OP25qQWA/exec')
+                .then(response => response.json())
+                .then(data => {
+                    // Extract the data from the response
+                    const columnBData = data.content.map(row => row[1]); // Assuming B column is index 1
 
-        // Filter out non-numeric values and convert to numbers
-        const numericData = columnBData.filter(value => !isNaN(value)).map(Number);
+                    // console.log('Column B Data:', columnBData); // Log the column B data to see if it's correct
 
-       // console.log('Numeric Data:', numericData); // Log the numeric data
+                    // Filter out non-numeric values and convert to numbers
+                    const numericData = columnBData.filter(value => !isNaN(value)).map(Number);
 
-        // Find the highest number in the numeric data
-        const highestNumber = Math.max(...numericData);
+                    // console.log('Numeric Data:', numericData); // Log the numeric data
 
-       // console.log('Highest Number:', highestNumber); // Log the highest number to see if it's correct
+                    // Find the highest number in the numeric data
+                    const highestNumber = Math.max(...numericData);
 
-        // Add 1 to the highest number to get the new case number
-        const newCaseNumber = highestNumber + 1;
+                    // console.log('Highest Number:', highestNumber); // Log the highest number to see if it's correct
 
-        //console.log('New Case Number:', newCaseNumber); // Log the new case number
+                    // Add 1 to the highest number to get the new case number
+                    const newCaseNumber = highestNumber + 1;
 
-        // Set the new case number value in the input field
-        document.getElementsByName("casenumb")[0].value = newCaseNumber;
-        fetchSuggestions();
-        
-        document.getElementById('speener').style.display = 'none';
-    })
-    .catch(error => console.error('Error:', error));
-    
-}
+                    //console.log('New Case Number:', newCaseNumber); // Log the new case number
 
-var key = localStorage.getItem("name");
+                    // Set the new case number value in the input field
+                    document.getElementsByName("casenumb")[0].value = newCaseNumber;
+                    fetchSuggestions();
 
-if (key == "secrate") {
-}
-else {
-  window.location.href = "index.html";
-}
+                    document.getElementById('speener').style.display = 'none';
+                })
+                .catch(error => console.error('Error:', error));
 
-// Check if session has timed out
-    if(localStorage.getItem('name') === 'logout') {
-      // Perform logout actions here, such as redirecting to login page
-      window.location.href = 'index.html';
-    } else {
-      // Set session timeout timer to check for session timeout
-      var sessionTimeout = setTimeout(function() {
-        // Set local storage item to "logout"
-        localStorage.setItem('name', 'logout');
-        // Perform logout actions here, such as redirecting to login page
-        window.location.href = 'index.html';
-      }, 1800000); // Set timeout period to 30 minutes (in milliseconds)
-    
-      // Reset session timeout on user activity
-      window.addEventListener('mousemove', function() {
-        clearTimeout(sessionTimeout);
-        sessionTimeout = setTimeout(function() {
-          // Set local storage item to "logout"
-          localStorage.setItem('name', 'logout');
-          // Perform logout actions here, such as redirecting to login page
-          window.location.href = 'index.html';
-        }, 1800000); // Set timeout period to 30 minutes (in milliseconds)
-      });
-    }
+        }
 
-       
+        var key = localStorage.getItem("name");
+
+        if (key == "secrate") {
+        }
+        else {
+            window.location.href = "index.html";
+        }
+
+        // Check if session has timed out
+        if (localStorage.getItem('name') === 'logout') {
+            // Perform logout actions here, such as redirecting to login page
+            window.location.href = 'index.html';
+        } else {
+            // Set session timeout timer to check for session timeout
+            var sessionTimeout = setTimeout(function () {
+                // Set local storage item to "logout"
+                localStorage.setItem('name', 'logout');
+                // Perform logout actions here, such as redirecting to login page
+                window.location.href = 'index.html';
+            }, 1800000); // Set timeout period to 30 minutes (in milliseconds)
+
+            // Reset session timeout on user activity
+            window.addEventListener('mousemove', function () {
+                clearTimeout(sessionTimeout);
+                sessionTimeout = setTimeout(function () {
+                    // Set local storage item to "logout"
+                    localStorage.setItem('name', 'logout');
+                    // Perform logout actions here, such as redirecting to login page
+                    window.location.href = 'index.html';
+                }, 1800000); // Set timeout period to 30 minutes (in milliseconds)
+            });
+        }
+
+
 
     </script>
 </body>
+
 </html>
