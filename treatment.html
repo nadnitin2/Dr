@@ -9,40 +9,51 @@
     <title>Resolution</title>
 </head>
 <style>
-
+    .popup {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        background-color: #e4dbdb;
+        z-index: 1000;
+        border: solid black;
+        border-radius: 5px;
+    }
+    .popup .close-btn {
+        background-color: #f44336;
+        color: white;
+        border: 2px black;
+        padding: 5px 0px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: black;
+    }
 </style>
 <body onload="run()">
     <span id="myLoader" class="myLoader">Loading</span>
     <h1>Treatment</h1>  
     <div id="speener" class="spinner" style="display: none;"></div>
     <form id="patientForm">
-
-      
-
-
         <div id="inputs">
-          <button id="infobutton" class="infobutton" onclick="showInfoPopup()">Info</button>
+            <button id="infobutton" class="infobutton" type="button" onclick="fetchInfo()">Info</button>
             <label for="casenumb">Case Number:</label>
-            <input type="text" id="casenumb" required name="casenumb" placeholder="Enter Case Number"
-                onkeyup="showCaseSuggestions()">
+            <input type="text" id="casenumb" required name="casenumb" placeholder="Enter Case Number" onkeyup="showCaseSuggestions()">
         </div>
-
         <div id="casesuggestionList" class="casesuggestionList"></div>
-
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" onkeyup="showNameSuggestions() "><br>
-
         <label for="address">Address:</label>
         <input type="text" required id="address" name="address"><br>
-
-        <label for="prob">Problem:</label>
+        <label for="prob">प्र.वेदना/काल:</label>
         <input type="text" required name="prob"><br>
         <br>
-
         <label for="treatment">Treatment information :</label>
         <textarea id="treatment" required name="treatment" rows="4" cols="50"></textarea><br><br>
         <input type="button" value="ADD Treatment Data" id="add_button" onclick="openPopup()">
-
         <div id="popup">
             <label for="leftInput">Medicine</label>
             <input type="text" id="leftInput" onkeyup="showSuggestions()">
@@ -50,29 +61,17 @@
             <label for="rightInput"> Time</label>
             <input type="text" id="rightInput">
             <br><br>
-
             <input type="button" value="Add" onclick="addToTextarea()">
             <input type="button" value="Cancel" onclick="closePopup()">
         </div>
         <br>
-
-        <div>   
+        <div>
             <label for="note">Note:</label>
-            <input type="text"  name="note">
+            <input type="text" name="note">
         </div><br>
-
         <input class="input" type="button" id="submitButton" value="Submit" onclick="validateForm()">
-        
-        <div id="popupContainer2" class="popup" name="popupContainer2"></div>
-
-
+        <div id="popupContainer2" class="popup"></div>
     </form>
-    <script>
-
-
-
-  </script>
-
 </body>
 
 </html>
