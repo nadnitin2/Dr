@@ -20,17 +20,17 @@
 
 
 
-            <label for="name">Name:</label>
+            <label for="name">*Name:</label>
             <input type="text" required name="name"><br>
 
-            <label for="address">Address:</label>
+            <label for="address">*Address:</label>
             <input type="text" required name="address"><br>
 
 
-            <label for="mobile">Contact:</label>
+            <label for="mobile">*Contact:</label>
             <input type="number" required name="mobile" pattern="0,1,2,3,4,5,6,7,8,9,"><br>
 
-            <label for="age">Age:</label>
+            <label for="age">*Age:</label>
             <input type="number" name="age" required><br>
             <br>
             <label for="genderContainer">Gender:</label>
@@ -55,7 +55,7 @@
 
             <div class="smallinput">
                 <label for="सकाळी"> सकाळी</label>
-                <input type="text" required name="सकाळी" id="1"><br>
+                <input type="text"  name="सकाळी" id="1"><br>
 
                 <label for="पाणी">पाणी </label>
                 <input type="text" name="पाणी" id="2" value="" onkeyup="updatePatientDataText()">
@@ -109,7 +109,7 @@
             <div class="genderContainer">
                 <label for="genderContainer">आहार</label>
                 <label class="genderLabel">
-                    <input type="checkbox" class="checkbox" required name="शीग्र" value="शीग्र"
+                    <input type="checkbox" class="checkbox"  name="शीग्र" value="शीग्र"
                         onclick="updatePatientDatacahar(this)">
                     शीग्र
                 </label>
@@ -188,7 +188,7 @@
             </label>
 
             <label class="genderLabel">
-                <input type="checkbox" required name="लोणचे" value="लोणचे" onclick="updatePatientDatacheckbox(this)">
+                <input type="checkbox"  name="लोणचे" value="लोणचे" onclick="updatePatientDatacheckbox(this)">
                 लोणचे
             </label>
 
@@ -204,7 +204,7 @@
                 थंड
             </label>
             <label class="genderLabel">
-                <input type="checkbox" required name="चिरमुरे" value="चिरमुरे"
+                <input type="checkbox"  name="चिरमुरे" value="चिरमुरे"
                     onclick="updatePatientDatacheckbox(this)">
                 चिरमुरे
             </label>
@@ -232,7 +232,7 @@
         <br>
         </div>
         <label for="patientData">Enter Patient information :</label>
-        <textarea id="patientData" required name="patientData" rows="10" cols="55"></textarea><br><br>
+        <textarea id="patientData"  name="patientData" rows="10" cols="55"></textarea><br><br>
          <div class="button-container">
             <input type="button" value="ADD Patient Data" id="add_button" onclick="openPopup()">
         </div>
